@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Stock Success Predictor</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<div class = "login">
+    <h1>Rate US Stocks using 10 pointer analysis</h1>
+    <h3> Enter the following values</h3>
+
+    <form action = "{{url_for('predict')}}"method="post">
+        <input type = "text" name = "pe_ratio" placeholder = " PE Ratio" required = "required" />
+        <input type = "text" name = "current_ratio" placeholder = "current_ratio" required = "required" />
+        <input type = "text" name = "roce" placeholder = "roce" required = "required" />
+        <input type = "text" name = "debt_to_equity_ratio" placeholder = "debt_to_equity_ratio" required = "required" />
+        <input type = "text" name = "inventory_turnover_ratio" placeholder = "inventory_turnover_ratio" required = "required" />
+        <input type = "text" name = "free_cash_flow" placeholder = "free_cash_flow" required = "required" />
+        <input type = "text" name = "reserves_trend" placeholder = "reserves_trend" required = "required" />
+        <input type = "text" name = "quick_ratio" placeholder = "quick_ratio" required = "required" />
+        <input type = "text" name = "return_on_equity_ratio" placeholder = "return_on_equity_ratio" required = "required" />
+        <input type = "text" name = "return_on_investment" placeholder = "return_on_investment" required = "required" />
+
+        <button type = "submit" class = "btn" >Predict</button>
+    </form>
+
+    <br>
+    <br>
+    {{prediction_text}}
+</div>
